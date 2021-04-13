@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Computer",
+      "price": "550000",
+      "quantity": 800,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": 2,
+      "name": "Smartphone",
+      "price": "180000",
+      "quantity": 200,
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": 4,
+      "name": "Television",
+      "price": 250000,
+      "quantity": 700,
+      "selected": true,
+      "available": false
+    },
+    {
+      "id": 6,
+      "name": "Disk drives",
+      "price": "15000",
+      "quantity": "600",
+      "selected": false,
+      "available": true
+    },
+    {
+      "name": "Radios",
+      "price": "3000",
+      "quantity": "350",
+      "selected": false,
+      "available": true,
+      "id": 7
+    },
+    {
+      "id": 8,
+      "name": "Joysticks",
+      "price": "100",
+      "quantity": "1800",
+      "selected": true,
+      "available": true
+    }
+  ]
+}
