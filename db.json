@@ -1,52 +1,44 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Computer",
-      "price": "550000",
-      "quantity": 800,
+      "name": "Computers",
+      "price": "650000",
+      "quantity": "1300",
       "selected": true,
-      "available": true
-    },
-    {
-      "id": 2,
-      "name": "Smartphone",
-      "price": "180000",
-      "quantity": 200,
-      "selected": false,
-      "available": true
-    },
-    {
-      "id": 4,
-      "name": "Television",
-      "price": 250000,
-      "quantity": 700,
-      "selected": true,
-      "available": false
-    },
-    {
-      "id": 6,
-      "name": "Disk drives",
-      "price": "15000",
-      "quantity": "600",
-      "selected": false,
-      "available": true
-    },
-    {
-      "name": "Radios",
-      "price": "3000",
-      "quantity": "350",
-      "selected": false,
       "available": true,
-      "id": 7
+      "id": 1
     },
     {
-      "id": 8,
-      "name": "Joysticks",
-      "price": "100",
-      "quantity": "1800",
+      "name": "Smartphones",
+      "price": "150000",
+      "quantity": "400",
       "selected": true,
-      "available": true
+      "available": true,
+      "id": 2
+    },
+    {
+      "name": "Tablets",
+      "price": "200000",
+      "quantity": "1896",
+      "selected": true,
+      "available": true,
+      "id": 3
+    },
+    {
+      "name": "Cameras",
+      "price": "3000",
+      "quantity": "789",
+      "selected": true,
+      "available": true,
+      "id": 4
+    },
+    {
+      "name": "Joystiks",
+      "price": "2500",
+      "quantity": "100",
+      "selected": true,
+      "available": true,
+      "id": 5
     }
   ]
 }

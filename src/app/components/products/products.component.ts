@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable, of,} from 'rxjs';
 import { map, startWith, catchError, subscribeOn} from 'rxjs/operators';
 import { Product } from 'src/app/models/product.model';
+import { EventDriverService } from 'src/app/services/event.driver.service';
 import { ProductsService } from 'src/app/services/products.service';
 import { ActionEvent, AppDataState, DataStateEnum, ProductsActionsTypes } from 'src/app/states/product.state';
 
@@ -12,11 +13,18 @@ import { ActionEvent, AppDataState, DataStateEnum, ProductsActionsTypes } from '
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
+
 export class ProductsComponent implements OnInit {
 
-  constructor(private productService:ProductsService, private router:Router) { }
+  constructor(
+    private productService:ProductsService,
+     private router:Router,
+     private eventDrivenService: EventDriverService) { }
 
   ngOnInit(): void {
+    this.eventDrivenService.sourceEventSubjectObservable.subscribe((actionEvent:ActionEvent)=>{
+      this.onActionEvent(actionEvent);
+    });
   }
 products$:Observable<AppDataState<Product[]>>|null=null;
 readonly DataStateEnum=DataStateEnum;
@@ -58,10 +66,10 @@ readonly DataStateEnum=DataStateEnum;
       }
     );
   }
-  onDelete(p:Product){
-    let v = confirm("Voulez vous vraimant supprimer?")
+  onDelete(product:Product){
+    let v = confirm("Voulez vous vraimant supprimer?");
     if(v==true)
-    this.productService.delete(p).subscribe(
+    this.productService.delete(product).subscribe(
       data => {
         this.onGetAllProducts();
        }
@@ -84,7 +92,6 @@ readonly DataStateEnum=DataStateEnum;
      case ProductsActionsTypes.SELECT_PRODUCT:this.onSelect($event.payload);break;
      case ProductsActionsTypes.EDIT_PRODUCT:this.onEdit($event.payload);break;
      case ProductsActionsTypes.DELETE_PRODUCT:this.onDelete($event.payload);break;
-
      default:
        break;
    }
